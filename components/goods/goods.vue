@@ -29,6 +29,7 @@
 </template>
 <script>
     export default {
+        name:'shop',
         data() {
             return {
                 products: [],
@@ -53,18 +54,14 @@
 
         }, methods: { //组件创建以后，index就变成了第2页，以后你拉就拉第二页以后的部分
             //如果你拉错了,index不加，还是再从第二页拉
-            loadBottom(id) {
+            getchufang() {
                 // 加载更多数据
                 // this.allLoaded = true; // 若数据已全部获取完毕
                 // this.$broadcast('onBottomLoaded', id);//vue2.0中没有了
-                this.$http.get(`${this.config.apiPath}/api/getgoods?pageindex=${this.pageindex}`)
+                this.$http.get('/components/goods/shop2.json')
                     .then(res => {
-                        //如果当前没有商品，禁止下拉的行为
-                        // if (res.body.message.length === 0) this.hasProduct = true;
-                        //第二次或者以后的请求是成功的
-                        this.pageindex++;
-                        //追加数据
-                        this.products = this.products.concat(res.body.message);
+
+                        this.products = res.body.message;
                     }, res => {
                         console.log('拉取数据失败');
                     });

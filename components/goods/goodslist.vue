@@ -2,8 +2,8 @@
     <div class="top">
         <go-back-header title="商品列表"></go-back-header>
         <mu-tabs :value="activeTab" @change="handleTabChange">
-                <mu-tab value="tab1" title="水杯系列"/>
-            <mu-tab value="tab2" title="厨房系列"/>
+            <mu-tab  value="tab1" title="水杯系列"/>
+            <mu-tab v-on:click="shuibei" value="tab2" title="厨房系列"/>
             <mu-tab value="tab3" title="冰箱系列"/>
             <mu-tab value="tab4" title="休闲系列"/>
             <mu-tab value="tab5" title="宝贝系列"/>
@@ -31,7 +31,9 @@
 </template>
 <script>
     import shop from './goods.vue'
+
     export default {
+        name:'goodslist',
         data () {
             return {
                 activeTab: 'tab1'
@@ -46,6 +48,9 @@
             },
             handleActive () {
                 window.alert('tab active')
+            },
+            shuibei(){
+                this.$refs.shop.getchufang('fff');
             }
         }
     }
