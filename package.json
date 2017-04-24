@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "../node_modules/.bin/webpack-dev-server --inline --hot --open"
+  },
+  "devDependencies": {
+    "vue-resource": "^1.2.1"
+  },
+  "dependencies": {
+    "iview": "^2.0.0-rc.10"
+  }
+}
