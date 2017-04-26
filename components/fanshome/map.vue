@@ -107,7 +107,7 @@
 
     }
     label{
-        margin-left: 10px;
+        margin-left: 5px;
     }
     input{
         margin-top: 10px;

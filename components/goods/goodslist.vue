@@ -2,30 +2,30 @@
     <div class="top">
         <go-back-header title="商品列表"></go-back-header>
         <mu-tabs :value="activeTab" @change="handleTabChange">
-            <mu-tab  value="tab1" title="水杯系列"/>
-            <mu-tab v-on:click="shuibei" value="tab2" title="厨房系列"/>
-            <mu-tab value="tab3" title="冰箱系列"/>
-            <mu-tab value="tab4" title="休闲系列"/>
-            <mu-tab value="tab5" title="宝贝系列"/>
-            <mu-tab value="tab6" @active="handleActive" title="清洁系列"/>
+            <mu-tab  value="tab1" v-on:active="shuibei"title="水杯系列"/>
+            <mu-tab value="tab2" v-on:active="chufang" title="厨房系列"/>
+            <mu-tab  value="tab3" v-on:active="bingxiang" title="冰箱系列"/>
+            <mu-tab value="tab4" v-on:active="xiuxian" title="休闲系列"/>
+            <mu-tab value="tab5" v-on:active="baobei" title="宝贝系列"/>
+            <mu-tab value="tab6" v-on:active="qingjie" title="清洁系列"/>
         </mu-tabs>
-        <div v-if="activeTab === 'tab1'">
-           <shop> </shop>
-            </div>
+        <div  v-if="activeTab === 'tab1'">
+            <shop ref="shop"></shop>
+        </div>
         <div v-if="activeTab === 'tab2'">
-            <shop> </shop>
+            <shop ref="shop"></shop>
         </div>
         <div v-if="activeTab === 'tab3'">
-            <shop> </shop>
+            <shop ref="shop"></shop>
         </div>
         <div v-if="activeTab === 'tab4'">
-            <shop> </shop>
+            <shop ref="shop"></shop>
         </div>
         <div v-if="activeTab === 'tab5'">
-            <shop> </shop>
+            <shop ref="shop"></shop>
         </div>
         <div v-if="activeTab === 'tab6'">
-            <shop> </shop>
+            <shop ref="shop"></shop>
         </div>
     </div>
 </template>
@@ -33,26 +33,41 @@
     import shop from './goods.vue'
 
     export default {
-        name:'goodslist',
+        name: 'goodslist',
         data () {
             return {
                 activeTab: 'tab1'
             }
         },
-        components:{
-            shop
+        components: {
+            shop:shop
         },
+
         methods: {
             handleTabChange (val) {
                 this.activeTab = val
             },
-            handleActive () {
-                window.alert('tab active')
+            qingjie () {
+                this.$refs.shop.$emit('getqingjie');
+            },
+            baobei(){
+                this.$refs.shop.$emit('getbaobei');
+            },
+            xiuxian(){
+                this.$refs.shop.$emit('getxiuxian');
+            },
+           bingxiang(){
+                this.$refs.shop.$emit('getbingxiang');
             },
             shuibei(){
-                this.$refs.shop.getchufang('fff');
+                this.$refs.shop.$emit('getshuibei');
+            },
+            chufang(){
+                this.$refs.shop.$emit('getchufang');
             }
-        }
+
+        },
+
     }
 </script>
 <style scoped>
