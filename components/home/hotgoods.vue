@@ -1,6 +1,6 @@
 <template>
     <div class="gridlist-demo-container">
-        <router-link to="goodsdedatil">
+        <router-link to="/goodsdetail">
         <mu-grid-list class="gridlist-demo">
             <mu-sub-header>热销单品</mu-sub-header>
 

@@ -5,7 +5,8 @@
                      :bottom-all-loaded="hasProduct">
             <ul class="mui-table-view mui-grid-view">
                 <li class="mui-table-view-cell mui-media mui-col-xs-6" v-for="item in products" :key="item.id">
-                    <router-link :to="'/goods/detail/'+item.id">
+                    <!--<router-link :to="'/goodsdetail/'+item.id">-->
+                    <router-link to="/goodsdetail">
                         <img class="mui-media-object" :src="item.img_url">
                         <div class="mui-media-body">{{item.title}}</div>
                         <div class="desc">

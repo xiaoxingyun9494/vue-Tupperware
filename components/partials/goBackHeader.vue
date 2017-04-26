@@ -23,10 +23,7 @@
         position: relative;
         margin-top: 40px;
     }
-    /*.go-back-header{*/
-        /*position: fixed;*/
-        /*width: 100%;*/
-        /*top: 45px;*/
-
-    /*}*/
+    .mui-title{
+        color: #ff4081;
+    }
 </style>

@@ -6,7 +6,7 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import MintUi from 'mint-ui';
-import moment from 'moment';
+import Comment from 'moment';
 import LazyLoad from 'mint-ui';
 // import iview from 'iview';
 // import BMap from 'vue-amap';
@@ -34,12 +34,19 @@ import ShopCar from './components/shopCar/shopCar.vue';
 import HotGoods from './components/home/hotgoods.vue';
 //引入商品列表
 import GoodsList from './components/goods/goodslist.vue';
+//引入商品详情
+import GoodsDetail from './components/goods/goodsdetail.vue';
 //引入地图
 import Map from './components/fanshome/map.vue';
 //引入子组件
 import Shop from './components/goods/goods.vue';
-
-
+//引入新闻列表模块
+import NewsList from './components/news/newsList.vue';
+//引入新闻详情模块
+import NewsDetail from './components/news/newsDetail.vue';
+//图片预览组件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview);
 //安装插件
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -63,6 +70,9 @@ let router = new VueRouter({
         {name:'hotgoods',path:'/hotgoods',component:HotGoods},
         {name:'goodslist',path:'/goodslist',component:GoodsList},
         {name:'shop',path:'/shop',component:Shop},
+        {name:'detail',path:'/goodsdetail',component:GoodsDetail},
+        {name:'news.list',path:'/newslist',component:NewsList},
+        {name:'news.detail',path:'/newsdetail/:id',component:NewsDetail},
 
     ]
 });
@@ -77,9 +87,27 @@ Vue.component('shop',Shop);
 //在原型上配置一个属性
 
 
-new Vue({
-    el:'#app',
-    router:router,
-    render:c=>c(App),
+// import Vuex from 'vuex';
+// import shopCart from './modules/shopCart.js';
+// //安装插件
+// Vue.use(Vuex);
+// //构建Store实例对象
+// const store = new Vuex.Store({
+//     modules: {
+//         shopCart
+//     }
+// });
 
+
+
+
+//创建Vue实例对象
+new Vue({
+    el: '#app',
+    router,
+    // store, //老师把这个属性忘了一节课了，别忘了
+    render: c => c(App)
 });
+
+
+

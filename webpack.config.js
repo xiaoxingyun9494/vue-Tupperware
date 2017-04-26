@@ -1,5 +1,6 @@
 //1:html-webpack-plugin
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 //2:entry
 //3:output
 //4:module -->loader
@@ -47,6 +48,11 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             template: './index.html'
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"production"'
+            }
         })
     ]
 

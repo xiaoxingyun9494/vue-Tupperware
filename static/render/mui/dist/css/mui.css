@@ -1765,6 +1765,7 @@ input[type='submit'].mui-active:enabled,
 .mui-card-header.mui-card-media .mui-media-body p {
     font-size: 13px;
     margin-bottom: 0;
+    color: #f50bc1;
 }
 
 .mui-table-view {
@@ -2082,6 +2083,7 @@ input[type='submit'].mui-active:enabled,
 .mui-table-view .mui-media,
 .mui-table-view .mui-media-body {
     overflow: hidden;
+
 }
 
 .mui-table-view .mui-media-large .mui-media-object {
@@ -2199,6 +2201,7 @@ input[type='submit'].mui-active:enabled,
 .mui-table-view-cell > a .mui-push-right > .mui-switch {
     right: 35px;
 }
+
 
 .mui-content > .mui-table-view:first-child {
     margin-top: 15px;
@@ -2332,6 +2335,7 @@ input[type='submit'].mui-active:enabled,
     margin-top: 8px;
     text-overflow: ellipsis;
     color: #333;
+
 }
 
 .mui-table-view.mui-grid-view .mui-table-view-cell:before,

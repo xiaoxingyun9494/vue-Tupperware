@@ -77,16 +77,16 @@
                     </li>
 
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                        <router-link to='/shop'>
+                        <router-link to='/newslist'>
                             <span class="mui-icon mui-icon-location"></span>
                             <div class="mui-media-body">热点资讯</div>
                         </router-link>
                     </li>
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                        <a href="#">
+                        <router-link to='/goodslist'>
                             <span class="mui-icon mui-icon-search"></span>
                             <div class="mui-media-body">创业加盟</div>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
                         <a href="#">
@@ -108,21 +108,18 @@
     export default {
         data(){
             return {
-//                imgs: []
+                imgs: []
             }
         },created(){
-//            this.$http.get('http://webhm.top:8899/api/getlunbo')
-//                    .then(res=> {
-////                    console.log(res.body);
-//                        this.imgs = res.body.message;
-//                    }, res=> {
-//                        console.log('获取图片资源失败');
-//                    })
+            this.$http.get('http://webhm.top:8899/api/getlunbo')
+                    .then(res=> {
+//                    console.log(res.body);
+                        this.imgs = res.body.message;
+                    }, res=> {
+                        console.log('获取图片资源失败');
+                    })
         },methods:{
-        menuToggle(){
-//
 
-        }
     }
     };
 

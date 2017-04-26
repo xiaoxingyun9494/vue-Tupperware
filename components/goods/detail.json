@@ -1,0 +1,26 @@
+{
+  "status": 0,
+  "message": [
+    {
+      "img": "../../static/images/baoli.jpg",
+      "src": "../../static/images/baoli.jpg",
+      "url": "#"
+    },
+    {
+      "img": "../../static/images/baodi.jpg",
+      "src": "../../static/images/baodi.jpg",
+      "url": "#"
+    },
+    {
+      "img": "../../static/images/baozhu.jpg",
+      "src": "../../static/images/baozhu.jpg",
+      "url": "#"
+    },
+    {
+      "img": "../../static/images/baosi.jpg",
+      "src": "../../static/images/baosi.jpg",
+      "url": "#"
+    }
+
+  ]
+}
